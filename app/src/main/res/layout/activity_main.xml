@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
     <TextView
         android:id="@+id/header"
         android:layout_width="wrap_content"
@@ -18,12 +17,21 @@
         app:layout_constraintTop_toTopOf="parent" />
     <Button
         android:id="@+id/light"
-        android:text="Toggle light"
+        android:text="Increase intensity"
         android:layout_margin="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/header"
         />
+    <Button
+        android:id="@+id/light2"
+        android:text="Decrease intensity"
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/light"
+        />
+
     <Button
         android:id="@+id/left"
         android:text="Backward"
@@ -31,7 +39,7 @@
         android:layout_margin="10dp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/light"
+        app:layout_constraintTop_toBottomOf="@id/light2"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/stop"/>
     <Button
@@ -41,7 +49,7 @@
         android:layout_margin="10dp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/light"
+        app:layout_constraintTop_toBottomOf="@id/light2"
         app:layout_constraintLeft_toRightOf="@id/left"
         app:layout_constraintRight_toLeftOf="@id/right"/>
     <Button
@@ -51,7 +59,40 @@
         android:layout_margin="10dp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/light"
+        app:layout_constraintTop_toBottomOf="@id/light2"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toRightOf="@id/stop"/>
+    <LinearLayout
+        android:id="@+id/linear"
+        app:layout_constraintTop_toBottomOf="@id/stop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="invisible"
+        android:gravity="center">
+        <Button
+            android:id="@+id/red"
+            android:text="Searching"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/green"
+            android:text="Not found"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/blue"
+            android:text="Found"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/find_book"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:text="Find book"
+        app:layout_constraintTop_toBottomOf="@id/linear"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
